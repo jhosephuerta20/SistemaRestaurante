@@ -1,19 +1,17 @@
 ---
-import { Image } from "astro:assets";
-import banner from "@/assets/banner.png";
+interface Props {
+  imagen: string;
+}
+
+const { imagen }: Props = Astro.props;
 ---
 
 <main class="relative h-screen">
-  <Image class="w-full h-full" src={banner} alt="imaguen del banner" />
-
-  <div
-    class="absolute inset-0 flex flex-col items-center justify-center *:font-bold"
-  >
+  <img class="h-full w-full " src={imagen} alt="Banner" />
+  <div class="absolute inset-0 flex flex-col items-center justify-center font-bold space-y-2">
     <h2 class="text-5xl text-customYellow">Rincon</h2>
     <h1 class="text-6xl text-white">Gastronomico</h1>
-    <button
-      class="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700"
-    >
+    <button class="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">
       Ver menú
     </button>
   </div>

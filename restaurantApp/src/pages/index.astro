@@ -5,12 +5,13 @@ import Banner from "@/components/Banner.astro";
 import Section from "@/components/Section.astro";
 import Products from "@/components/Products.astro";
 import Footer from "@/components/Footer.astro";
+import bannerImagen from "../assets/banner.png"; 
 ---
 
 <Layout title="Rincon Gatronomico">
   <Header />
-  <Banner />
-  <Section />
+  <Banner imagen={bannerImagen.src} />
+  <Section />"
   <Products />
   <Footer />
 </Layout>

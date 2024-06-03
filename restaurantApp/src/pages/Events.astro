@@ -1,8 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
+import Banner from "@/components/Banner.astro";
+import bannerEventos from "../assets/bannerEventos.webp";
+import Footer from "@/components/Footer.astro";
 
 ---
 <Layout title="Eventos">
     <Header/>
+    <Banner imagen={bannerEventos.src} />
+    <Footer/>
 </Layout>

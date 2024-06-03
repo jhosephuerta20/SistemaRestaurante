@@ -1,8 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
+import Banner from "@/components/Banner.astro";
+import bannerMenu from "../assets/bannerMenu.webp";
+import Footer from "@/components/Footer.astro";
 
 ---
 <Layout title="Menú del dia">
     <Header/>
+    <Banner imagen={bannerMenu.src} />
+    <Footer/>
 </Layout>

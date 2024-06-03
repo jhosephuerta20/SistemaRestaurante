@@ -14,7 +14,7 @@ export default {
 				},
 				backgroundImage: {
 				  'login': "url('/src/assets/login.jpg')",
-				  'footer': "url('/src/assets/foote.jpg')",
+				  'footer': "url('/src/assets/footer.webp')",
 				}
 		},
 	},
