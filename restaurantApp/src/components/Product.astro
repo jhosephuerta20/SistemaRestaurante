@@ -1,0 +1,127 @@
+---
+
+interface Props {
+  image: any;
+  title: string;
+  price: number;
+}
+
+const { image, title, price }: Props = Astro.props;
+
+let reviews = [
+  {
+    icon: "fa-solid fa-star",
+    color: "yellow",
+  },
+];
+---
+
+<article class="w-72 group">
+  <div
+    class="bg-customGrey w-full flex items-center justify-center px-4 py-10 relative"
+  >
+    <img
+      class="w-64 h-64 rounded-full"
+      src={image.src}
+      alt="Descripción de la imagen"
+    />
+
+    <div
+      class="flex flex-col gap-2 absolute top-3 right-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+    >
+      <button class="bg-customOrange w-10 h-10">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+      <button class="bg-customOrange w-10 h-10 botonfuncion">
+        <i class="fa-regular fa-eye"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Contenido del producto -->
+  <div class="flex flex-col gap-3">
+    <div>
+      {
+        Array.from({ length: 5 }).map(() => (
+          <i class={reviews[0].icon} style={`color: ${reviews[0].color};`} />
+        ))
+      }
+    </div>
+    <h1>{title}</h1>
+    <span class="font-bold">S/{price.toFixed(2)}</span>
+  </div>
+</article>
+
+<!-- Sección oculta -->
+<div class="modal hidden fixed inset-0 bg-gray-700/60 w-screen h-screen z-50">
+  <div class="flex h-screen justify-center items-center">
+    <div class="modal-content h-auto w-2/6 bg-white rounded-lg relative">
+      <button
+        class="close-modal absolute top-2 right-2 bg-gray-100 h-10 w-10 rounded-full p-2"
+      >
+        <i class="fa-solid fa-times"></i>
+      </button>
+      <div class="w-full">
+        <img class="h-80 object-cover w-full" src={image.src} alt="Imagen" />
+      </div>
+
+      <div class="flex gap-x-40 p-5">
+        <div class="space-y-4">
+          <div class="text-2xl">
+            {
+              Array.from({ length: 5 }).map(() => (
+                <i
+                  class={reviews[0].icon}
+                  style={`color: ${reviews[0].color};`}
+                />
+              ))
+            }
+          </div>
+          <h1>{title}</h1>
+          <span class="font-bold">S/{price}</span>
+        </div>
+        <div class="flex flex-col gap-4">
+          <button class="text-end">
+            <i class="fa-regular fa-heart text-2xl"></i>
+          </button>
+          <button
+            class="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700"
+          >
+            <span>Agregar orden</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openModalButtons = document.querySelectorAll(".botonfuncion");
+    const modals = document.querySelectorAll(".modal");
+
+    openModalButtons.forEach((button, index) => {
+      const modal = modals[index];
+      const closeModalButton = modal.querySelector(".close-modal");
+
+      const openModal = () => {
+        modal.classList.remove("hidden");
+        document.body.classList.add("overflow-hidden");
+      };
+
+      const closeModal = () => {
+        modal.classList.add("hidden");
+        document.body.classList.remove("overflow-hidden");
+      };
+
+      button.addEventListener("click", openModal);
+      closeModalButton?.addEventListener("click", closeModal);
+
+      window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    });
+  });
+</script>

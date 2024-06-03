@@ -1,0 +1,11 @@
+---
+const {
+  name = 'car',
+  style = 'solid',
+  scale = '',
+  id = "",
+  className = "",
+} = Astro.props;
+---
+
+<i class={`fa-${name} fa-${style} ${className}`} id={id} style={`font-size: ${scale}em`}></i>
