@@ -4,10 +4,11 @@ import Header from "@/components/Header.astro";
 import Banner from "@/components/Banner.astro";
 import bannerMenu from "../assets/bannerMenu.webp";
 import Footer from "@/components/Footer.astro";
-
+import CategoriesMenu from "@/components/CategoriesMenu.astro";
 ---
 <Layout title="Menú del dia">
     <Header/>
     <Banner imagen={bannerMenu.src} />
+    <CategoriesMenu title={"Platos calientes"} cantidad={"10 platos"} icon={"car"}/>
     <Footer/>
 </Layout>
