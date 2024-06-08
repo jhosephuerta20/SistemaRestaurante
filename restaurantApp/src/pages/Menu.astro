@@ -4,11 +4,17 @@ import Header from "@/components/Header.astro";
 import Banner from "@/components/Banner.astro";
 import bannerMenu from "../assets/bannerMenu.webp";
 import Footer from "@/components/Footer.astro";
-import CategoriesMenu from "@/components/CategoriesMenu.astro";
+// import CategoriesMenu from "@/components/CategoriesMenu.jsx";
 ---
 <Layout title="Menú del dia">
     <Header/>
     <Banner imagen={bannerMenu.src} />
-    <CategoriesMenu title={"Platos calientes"} cantidad={"10 platos"} icon={"car"}/>
+    <!-- <section class="flex gap-10 bg-[#F2F1F2] py-5 justify-center">
+        <CategoriesMenu title={"Platos calientes"} cantidad={"10 platos"} icon={"fa-light fa-pot-food"}/>
+        <CategoriesMenu title={"Platos Frios"} cantidad={"10 platos"} icon={"fa-light fa-pot-food"}/>
+        <CategoriesMenu title={"Postres"} cantidad={"10 platos"} icon={"fa-light fa-pot-food"}/>
+        <CategoriesMenu title={"Vinos"} cantidad={"10 platos"} icon={"fa-light fa-pot-food"}/>
+    </section> -->
+    
     <Footer/>
 </Layout>
