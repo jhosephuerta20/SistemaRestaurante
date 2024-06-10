@@ -1,0 +1,14 @@
+---
+const { image, title, price } = Astro.props;
+---
+
+<div class="border-2 border-black gap-x-32 inline-flex items-center p-7 w-fit">
+  <div class="">
+    <h3 class="font-bold">{title}</h3>
+    <h4 class="text-[#736868]">Comida criolla</h4>
+    <span class="font-bold">S/{price.toFixed(2)}</span>
+  </div>
+  <div class="w-52 flex items-center">
+    <img src={image} alt="imagen del plato" class="rounded-xl" />
+  </div>
+</div>

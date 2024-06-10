@@ -1,21 +1,23 @@
 ---
-import Icons from './Icons.astro';
+import Icons from "./Icons.astro";
 
 interface Props {
-    title:String;
-    cantidad:String;
-    icon: any;
-  }
-  
-  const { title,cantidad,icon }: Props = Astro.props;
+  title: string;
+  cantidad: string;
+  icon: any;
+}
+
+const { title, cantidad, icon }: Props = Astro.props;
 ---
-  
-  <section>
-    <div class="bg- flex gap-8">
-        <div><Icons name={icon}/></div>
-        <div>
-            <span>{title}</span>
-            <span>{cantidad}</span>
-        </div>
-    </div>
-  </section>
+
+<button
+  class="bg-white flex gap-9 rounded-xl px-6 py-3 items-center text-black"
+>
+  <div>
+    <Icons style="regular" scale={2} name={icon} />
+  </div>
+  <div class="flex flex-col gap-y-2">
+    <span class="font-bold text-xl">{title}</span>
+    <span class="text-start">{cantidad}</span>
+  </div>
+</button>
