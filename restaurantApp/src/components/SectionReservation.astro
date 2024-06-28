@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import reservation from "@/assets/reservations.webp";
+import MotivoReserva from "@/components/MotivoReserva.tsx";
+import LugarRestaurante from "@/components/LugarRestaurante";
+import DayReservation from "@/components/DayReservation.tsx";
+import ReservationTime from "@/components/ReservationTime.tsx";
+import Mesas from "@/components/Mesas.tsx";
+---
+
+<section class="flex">
+  <div class="w-2/4 bg-[#F5DCCE] flex justify-center">
+    <div class="w-4/6">
+      <!-- Title -->
+      <div class="flex gap-2 items-center text-4xl py-5">
+        <i class="fa-regular fa-calendar-check" style="color: #c25a14;"></i>
+        <h1>Sistema de Reservas Online</h1>
+      </div>
+      <!-- Formulario -->
+      <div class="space-y-5">
+        <MotivoReserva/>
+        <LugarRestaurante/>
+        <DayReservation client:load/>
+        <ReservationTime client:load/>
+        <Mesas/>     
+      </div>
+    </div>
+  </div>
+
+  <div class="w-2/4">
+    <Image src={reservation} alt="imagen reservaciones" class="w-full object-cover" />
+  </div>
+</section>

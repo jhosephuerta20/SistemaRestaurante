@@ -2,13 +2,22 @@
 const { image, title, price } = Astro.props;
 ---
 
-<div class="border-2 border-black gap-x-32 inline-flex items-center p-7 w-fit">
+<div class="border-2 border-black rounded-lg gap-x-10 inline-flex p-7 w-fit">
   <div class="">
     <h3 class="font-bold">{title}</h3>
     <h4 class="text-[#736868]">Comida criolla</h4>
     <span class="font-bold">S/{price.toFixed(2)}</span>
   </div>
   <div class="w-52 flex items-center">
-    <img src={image} alt="imagen del plato" class="rounded-xl" />
+    <img src={image} alt="imagen del plato"/>
   </div>
+  <div class="flex flex-col gap-y-9">
+    <button class="bg-customOrange w-10 h-10">
+    <i class="fa-light fa-cart-shopping" style="color: #ffffff;"></i>
+  </button>
+  <button class="bg-customOrange w-10 h-10">
+    <i class="fa-light fa-heart" style="color: #ffffff;"></i>
+  </button>
+  </div>
+  
 </div>
