@@ -1,8 +1,17 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
+import Banner from "@/components/Banner.astro";
+import SectionReservation from "@/components/SectionReservation.astro";
+import Footer from "@/components/Footer.astro";
+import MenuRecommendations from '@/components/MenuRecommendations.astro'
+import bannerReservas from "@/assets/bannerReservas.webp"
 
 ---
 <Layout title="Reservas">
     <Header/>
+    <Banner imagen={bannerReservas.src}/>
+    <MenuRecommendations/>
+    <SectionReservation/>
+    <Footer/>
 </Layout>
