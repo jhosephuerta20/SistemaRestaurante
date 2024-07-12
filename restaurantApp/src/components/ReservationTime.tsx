@@ -26,9 +26,9 @@ const TimePickerComponent: React.FC = () => {
 
   return (
     <div>
-      <label htmlFor="time-picker" className="block text-lg font-medium text-gray-700 mb-2">Indicar Hora</label>
+      <label htmlFor="time-picker" className="block font-medium text-gray-700 mb-2">Indicar Hora</label>
       <div className="relative">
-        <button className="w-full h-14 inline-flex justify-between  border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button className="w-full h-10">
           {selectedTime || 'Seleccionar hora'}
         </button>
         <input

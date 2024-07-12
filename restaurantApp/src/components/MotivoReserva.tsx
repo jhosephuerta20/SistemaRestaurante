@@ -14,13 +14,13 @@ const DropdownComponent: React.FC = () => {
 
   return (
     <div>
-      <label htmlFor="table-select" className="block text-lg font-medium text-gray-700 mb-2">Motivo de la Reserva</label>
+      <label htmlFor="table-select" className="block font-medium text-gray-700 mb-2">Motivo de la Reserva</label>
       <div className="relative">
         <select
           id="table-select"
           value={selectedTable}
           onChange={handleSelectChange}
-          className="block w-full h-14 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          className="block w-full h-10 pl-3 pr-10 py-2 text-base border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
           <option value="" disabled>Selecciona un motivo</option>
           {tables.map((table) => (
